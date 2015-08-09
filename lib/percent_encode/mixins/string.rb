@@ -6,8 +6,6 @@
 #
 # @since 0.9.0
 #
-# @todo urldecode!
-#
 
 require'cgi'
 
@@ -21,9 +19,9 @@ module PercentEncode
       #
       # @return [String] encoded `achr` character
       #
-      # @example String.char_encode
+      # @example String#char_encode
       #
-      # @todo char_decode
+      # @todo String#char_decode
       #
       def char_encode(achr)
         raise(TypeError, 'achr must be a kind of Fixnum or Integer!') if !(achr.kind_of?(Fixnum) or achr.kind_of?(Integer))
@@ -140,6 +138,7 @@ module PercentEncode
             when :single
             when :double
             when :triple
+            when :unicode
             when nil
             else
               raise(NotImplementedError, 'Unknown opts[:nibble] symbol!') if anib
@@ -159,6 +158,24 @@ module PercentEncode
           empt, hstr, ptre, glre = atmp.dup, %q{H*}, %r{crpt}, %r{^.*$}
 
           case anib
+          when :unicode # @todo refactor below code into a reusable &block method
+            aint, ahex = 0, self.percent_encode
+
+            ahex.bytes.each_with_index do |c, k|
+              if aint.zero?
+                aret << '%'
+
+                aint += 1
+              elsif aint == 1
+                aret << "%U00#{char_encode(c / 16)}#{char_encode(c % 16)}"
+
+                aint += 1
+              else
+                aret << "%U00#{char_encode(c / 16)}"
+
+                aint = 0
+              end
+            end
           when :first
             aint, ahex = 0, self.percent_encode
 
@@ -205,7 +222,7 @@ module PercentEncode
             aret << self.percent_encode
           end
 
-            self.sub!(glre, aret)
+          self.sub!(glre, aret)
         end
 
         (aret and !aret.empty?) ? aret : self

@@ -58,14 +58,19 @@ A collection of methods (constructive and destructive) for performing
   `'https://host.dom'.urlencode!( { :nibble => :double, :count => 1} )`
   `# => "%25%36%38%25%37%34%25%37%34%25%37%30%25%37%33%25%33%41%25%32%46%25%32%46%25%36%38%25%36%46%25%37%33%25%37%34%25%32%45%25%36%34%25%36%46%25%36%44"`
 
-* One round of triple percent encoding: 
+* One round of triple percent encoding:
 
   `'https://host.dom'.urlencode!( { :nibble => :triple, :count => 1 } )`
   `# => "%25%32%35%25%33%36%25%33%38%25%32%35%25%33%37%25%33%34%25%32%35%25%33%37%25%33%34%25%32%35%25%33%37%25%33%30%25%32%35%25%33%37%25%33%33%25%32%35%25%33%33%25%34%31%25%32%35%25%33%32%25%34%36%25%32%35%25%33%32%25%34%36%25%32%35%25%33%36%25%33%38%25%32%35%25%33%36%25%34%36%25%32%35%25%33%37%25%33%33%25%32%35%25%33%37%25%33%34%25%32%35%25%33%32%25%34%35%25%32%35%25%33%36%25%33%34%25%32%35%25%33%36%25%34%36%25%32%35%25%33%36%25%34%34"`
 
+* Two rounds of single nibble encoding:
+
+  `'https://host.dom'.urlencode!( { :nibble => :unicode, :count => 1 } )`
+  `=> "%%U0036%U003%%U0037%U003%%U0037%U003%%U0037%U003%%U0037%U003%%U0033%U004%%U0032%U004%%U0032%U004%%U0036%U003%%U0036%U004%%U0037%U003%%U0037%U003%%U0032%U004%%U0036%U003%%U0036%U004%%U0036%U004"`
+
 ## Requirements
 
-* [ruby](http://www.ruby-lang.org/) >= 2.2.2
+* [Ruby](http://www.ruby-lang.org/) >= 2.2.2
 
 ## Install
 
@@ -76,3 +81,4 @@ A collection of methods (constructive and destructive) for performing
 Copyright (c) 2015 Derek Callaway
 
 See {file:LICENSE.txt} for license information.
+#EOF#
