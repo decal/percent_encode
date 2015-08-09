@@ -35,8 +35,8 @@ A collection of methods (constructive and destructive) for performing
 
 * Requiring the percent_encode RubyGem:
 
-   `require'percent_encode'
-    # => true'
+   `require'percent_encode'`
+   `# => true`
 
 * One round of single percent encoding:
    `'https://host.dom'.urlencode!({:nibble=>:single,:count=>1})
