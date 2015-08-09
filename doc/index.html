@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!file.README.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'>
+<h1 id="label-percent_encode">percent_encode</h1>
+<ul><li>
+<p><a href="https://github.com/decal/percent_encode">Source</a></p>
+</li><li>
+<p><a href="https://github.com/decal/percent_encode/issues">Issues</a></p>
+</li><li>
+<p><a href="http://rubydoc.info/gems/percent_encode">Documentation</a></p>
+</li><li>
+<p>[Email](<a href="mailto:decal">decal</a> at ethernet.org)</p>
+</li></ul>
+
+<h2 id="label-Description">Description</h2>
+
+<p>A collection of methods (constructive and destructive) for performing <a
+href="http://en.wikipedia.org/wiki/Percent_encoding">Percent encoding</a>
+computations.</p>
+
+<h2 id="label-Features">Features</h2>
+<ul><li>
+<p>Adds customized percent encoding String#urlencode!.</p>
+</li><li>
+<p>First nibble encoding, i.e. &#39;/index%%341.html&#39;</p>
+</li><li>
+<p>Second nibble encoding, i.e. &#39;/index%4%31.html&#39;</p>
+</li><li>
+<p>Double nibble encoding, i.e. &#39;/index%%34%31.html&#39;</p>
+</li><li>
+<p>Double percent encoding, i.e. &#39;/index%2541.html&#39;</p>
+</li><li>
+<p>Adds convenience methods:</p>
+</li><li>
+<p>String#char_encode</p>
+</li><li>
+<p>String#percent_encode</p>
+</li><li>
+<p>String#percent_encode!</p>
+</li><li>
+<p>String#percent_decode</p>
+</li><li>
+<p>String#percent_decode!</p>
+</li><li>
+<p>String#urlencode</p>
+</li><li>
+<p>String#urlencode1</p>
+</li><li>
+<p>String#urlencode2</p>
+</li><li>
+<p>String#urlencode3</p>
+</li><li>
+<p>String#urlencode1!</p>
+</li><li>
+<p>String#urlencode2!</p>
+</li><li>
+<p>String#urlencode3!</p>
+</li></ul>
+
+<h2 id="label-Examples">Examples</h2>
+<ul><li>
+<p>Requiring the percent_encode RubyGem:</p>
+
+<p>require&#39;percent_encode&#39;</p>
+
+<h1 id="label-3D-3E+true">=&gt; true</h1>
+</li><li>
+<p>One round of single percent encoding: &#39;<a
+href="https://host.dom'.urlencode!(:nibble=&gt;:single,:count=&gt;1&quot;&gt;host.dom&#39;.urlencode!({:nibble=&gt;:single,:count=&gt;1&lt;/a&gt;)</p>
+
+<h1 id="label-3D-3E+-22-2568-2574-2574-2570-2573-253A-252F-252F-2568-256F-2573-2574-252E-2564-256F-256D-22">=&gt; "%68%74%74%70%73%3A%2F%2F%68%6F%73%74%2E%64%6F%6D"</h1>
+</li><li>
+<p>One round of first nibble encoding: &#39;<a
+href="https://host.dom'.urlencode!(:nibble=&gt;:first,:count=&gt;1&quot;&gt;host.dom&#39;.urlencode!({:nibble=&gt;:first,:count=&gt;1&lt;/a&gt;)</p>
+
+<h1 id="label-3D-3E+-22-25-25368-25-25374-25-25374-25-25370-25-25373-25-25331-25-25326-25-25326-25-25368-25-25366-25-25373-25-25374-25-25325-25-25364-25-25366-25-25364-22">=&gt; "%%368%%374%%374%%370%%373%%331%%326%%326%%368%%366%%373%%374%%325%%364%%366%%364"</h1>
+</li><li>
+<p>One round of second nibble encoding:  &#39;<a
+href="https://host.dom'.urlencode!(:nibble=&gt;:second,:count=&gt;1&quot;&gt;host.dom&#39;.urlencode!({:nibble=&gt;:second,:count=&gt;1&lt;/a&gt;)
+# =&gt;
+"%%3%38%%3%34%%3%34%%3%30%%3%33%%3%41%%3%46%%3%46%%3%38%%3%46%%3%33%%3%34%%3%45%%3%34%%3%46%%3%44"</p>
+</li><li>
+<p>One round of double nibble encoding:  &#39;<a
+href="https://host.dom'.urlencode!(:nibble=&gt;:double,:count=&gt;1&quot;&gt;host.dom&#39;.urlencode!({:nibble=&gt;:double,:count=&gt;1&lt;/a&gt;)
+# =&gt;
+"%25%36%38%25%37%34%25%37%34%25%37%30%25%37%33%25%33%41%25%32%46%25%32%46%25%36%38%25%36%46%25%37%33%25%37%34%25%32%45%25%36%34%25%36%46%25%36%44"</p>
+</li><li>
+<p>One round of triple percent encoding:  &#39;<a
+href="https://host.dom'.urlencode!(:nibble=&gt;:triple,:count=&gt;1&quot;&gt;host.dom&#39;.urlencode!({:nibble=&gt;:triple,:count=&gt;1&lt;/a&gt;)
+# =&gt;
+"%25%32%35%25%33%36%25%33%38%25%32%35%25%33%37%25%33%34%25%32%35%25%33%37%25%33%34%25%32%35%25%33%37%25%33%30%25%32%35%25%33%37%25%33%33%25%32%35%25%33%33%25%34%31%25%32%35%25%33%32%25%34%36%25%32%35%25%33%32%25%34%36%25%32%35%25%33%36%25%33%38%25%32%35%25%33%36%25%34%36%25%32%35%25%33%37%25%33%33%25%32%35%25%33%37%25%33%34%25%32%35%25%33%32%25%34%35%25%32%35%25%33%36%25%33%34%25%32%35%25%33%36%25%34%36%25%32%35%25%33%36%25%34%34"</p>
+</li></ul>
+
+<h2 id="label-Requirements">Requirements</h2>
+<ul><li>
+<p><a href="http://www.ruby-lang.org/">ruby</a> &gt;= 2.2.2</p>
+</li></ul>
+
+<h2 id="label-Install">Install</h2>
+
+<pre class="code ruby"><code class="ruby">$ git clone https://github.com/decal/percent_encode.git</code></pre>
+
+<h2 id="label-Copyright">Copyright</h2>
+
+<p>Copyright © 2015 Derek Callaway</p>
+
+<p>See <a href="file.LICENSE.html" title="LICENSE">LICENSE</a> for license information.</p>
+</div></div>
+
+    <div id="footer">
+  Generated on Sat Aug  8 20:57:03 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.2.2).
+</div>
+
+  </body>
+</html>

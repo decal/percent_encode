@@ -1,0 +1,18 @@
+name: percent_encode
+summary: Apply custom percent encoding to a String, Pathname or URI
+description:
+  A collection of classes and methods within a single modular namespace
+  for performing a variety of percent, or hexadecimal URL-encodings; for the
+  purpose of evading IPSen (Intrusion Prevention Systems) in particular. 
+license: MIT
+author: Derek Callaway
+email: '[decal (AT) ethernet {D0T} org]'
+homepage: https://github.com/decal/percent_encode#readme
+has_yard: true
+
+required_ruby_version: '>= 2.2.2'
+
+development_dependencies:
+  rubygems-tasks: '>= 0.2.4'
+  rspec: '>= 3.3.1'
+  yard: '>= 0.8.7.6'

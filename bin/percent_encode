@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require'percent_encode'
+
+s = 'abc'
+
+s.urlencode!({:nibble=>nil,:count=>1})
+
+p s
+
+exit 0
