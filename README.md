@@ -9,6 +9,12 @@
 
 A collection of methods (constructive and destructive) for performing
 [Percent encoding](http://en.wikipedia.org/wiki/Percent_encoding) computations.
+Refer to this site for generic info about Unicode
+[The Unicode Consirtium](http://www.unicode.org)
+See this page for specific datum on utilizing Unicode style percent encoding
+[URL Percent Encoding and Unicode](http://http://xahlee.info/js/url_encoding_unicode.html)
+This text file explains the byte and nibble based encoding styles used by this gem
+[IDS/IPS Evasion for URI's](http://decal.sdf.org/doc/uris-ids-evasion.txt)
 
 ## Features
 
@@ -63,7 +69,7 @@ A collection of methods (constructive and destructive) for performing
   `'https://host.dom'.urlencode!( { :nibble => :triple, :count => 1 } )`
   `# => "%25%32%35%25%33%36%25%33%38%25%32%35%25%33%37%25%33%34%25%32%35%25%33%37%25%33%34%25%32%35%25%33%37%25%33%30%25%32%35%25%33%37%25%33%33%25%32%35%25%33%33%25%34%31%25%32%35%25%33%32%25%34%36%25%32%35%25%33%32%25%34%36%25%32%35%25%33%36%25%33%38%25%32%35%25%33%36%25%34%36%25%32%35%25%33%37%25%33%33%25%32%35%25%33%37%25%33%34%25%32%35%25%33%32%25%34%35%25%32%35%25%33%36%25%33%34%25%32%35%25%33%36%25%34%36%25%32%35%25%33%36%25%34%34"`
 
-* Two rounds of single nibble encoding:
+* Two rounds of Unicode encoding:
 
   `'https://host.dom'.urlencode!( { :nibble => :unicode, :count => 1 } )`
   `=> "%%U0036%U003%%U0037%U003%%U0037%U003%%U0037%U003%%U0037%U003%%U0033%U004%%U0032%U004%%U0032%U004%%U0036%U003%%U0036%U004%%U0037%U003%%U0037%U003%%U0032%U004%%U0036%U003%%U0036%U004%%U0036%U004"`
@@ -74,11 +80,16 @@ A collection of methods (constructive and destructive) for performing
 
 ## Install
 
-    $ git clone https://github.com/decal/percent_encode.git
+* [decal's GitHub: percent_encode](https://github.com/decal/percent_encode/)
 
-## Copyright
+  `$ git clone https://github.com/decal/percent_encode.git`
 
-Copyright (c) 2015 Derek Callaway
+## Notices
 
-See {file:LICENSE.txt} for license information.
+Copyright (c) 2015 by Derek Callaway
+
+See [file:LICENSE.txt](LICENSE.txt) for license information
+View [file:TODO.md](TODO.md) for project "to-do" intentions/inspirations
+Read [file:ChangeLog.md](ChangeLog.md) for code repository's official change log
+
 #EOF#
